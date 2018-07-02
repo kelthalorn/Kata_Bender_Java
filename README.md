@@ -28,10 +28,15 @@ Si Bender ne peut pas rejoindre la cabine à suicide car il tourne en boucle ind
   Exemple
 
 Par exemple, pour la carte ci-dessous :
+
 XXXXXX
-X@E $X
-X N  X
-XX   X
+
+X@E.$X
+
+X.N..X
+
+XX...X
+
 XXXXXX
 
 Bender effectuera la suite de mouvements :
@@ -60,15 +65,25 @@ Exemple
 Entrée
 
 10 10
+
 XXXXXXXXXX
-X        X
-X  S   W X
-X        X
-X  $     X
-X        X
-X@       X
-X        X
-XE     N X
+
+X........X
+
+X..S...W.X
+
+X........X
+
+X..$.....X
+
+X........X
+
+X@.......X
+
+X........X
+
+XE.....N.X
+
 XXXXXXXXXX
 
 Sortie
