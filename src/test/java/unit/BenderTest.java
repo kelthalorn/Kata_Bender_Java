@@ -12,39 +12,54 @@ public class BenderTest {
     private Bender bender;
 
     @Before
-    private void init() {
+    public void init() {
         bender = new Bender(width,height);
-        initMatrix();
+        initGrid();
     }
 
-	private void initMatrix() {
+    @Test
+    public void benderPositionShouldBeStartPointWhenBegin() {
+
+    }
+
+	private void initGrid() {
         for (int x = 0; x < width; x++) {
-            bender.matrix[0][x] = 'X';
+            bender.grid[x][0] = 'X';
         }
 
-        bender.matrix[1][0] = 'X';
-        bender.matrix[1][1] = '@';
-        bender.matrix[1][2] = 'E';
-        bender.matrix[1][3] = ' ';
-        bender.matrix[1][4] = '$';
-        bender.matrix[1][width-1] = 'X';
+        bender.grid[0][1] = 'X';
+        bender.grid[1][1] = '@';
+        bender.grid[2][1] = 'E';
+        bender.grid[3][1] = ' ';
+        bender.grid[4][1] = '$';
+        bender.grid[5][1] = 'X';
 
-        bender.matrix[2][0] = 'X';
-        bender.matrix[2][1] = ' ';
-        bender.matrix[2][2] = 'N';
-        bender.matrix[2][3] = ' ';
-        bender.matrix[2][4] = ' ';
-        bender.matrix[2][width-1] = 'X';
+        bender.grid[0][2] = 'X';
+        bender.grid[1][2] = ' ';
+        bender.grid[2][2] = 'N';
+        bender.grid[3][2] = ' ';
+        bender.grid[4][2] = ' ';
+        bender.grid[5][2] = 'X';
 
-        bender.matrix[3][0] = 'X';
-        bender.matrix[3][1] = 'X';
-        bender.matrix[3][2] = ' ';
-        bender.matrix[3][3] = ' ';
-        bender.matrix[3][4] = ' ';
-        bender.matrix[3][width-1] = 'X';
+        bender.grid[0][3] = 'X';
+        bender.grid[1][3] = 'X';
+        bender.grid[2][3] = ' ';
+        bender.grid[3][3] = ' ';
+        bender.grid[4][3] = ' ';
+        bender.grid[5][3] = 'X';
 
         for (int x = 0; x < width; x++) {
-            bender.matrix[height-1][x] = 'X';
+            bender.grid[x][height -1] = 'X';
         }
-	}
+    }
+    
+    public void displayGrid() {
+        for (int y = 0; y < height; y++) {
+            String display = "";
+            for (int x = 0; x < width; x++) {
+                display += bender.grid[x][y];
+            }
+            System.out.println(display);
+        }
+    }
 }
