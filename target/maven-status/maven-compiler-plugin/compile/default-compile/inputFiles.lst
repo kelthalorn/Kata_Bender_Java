@@ -1,2 +1,6 @@
-/home/thco/Projects/Katas/java/Bender/src/main/java/main/java/Main.java
-/home/thco/Projects/Katas/java/Bender/src/main/java/main/java/bender/Bender.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/bender/BenderManager.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/bender/Direction.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/bender/Bender.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/bender/BenderJavaKata.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/bender/Cell.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/bender/CellType.java
