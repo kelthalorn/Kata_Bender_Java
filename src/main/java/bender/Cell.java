@@ -94,4 +94,13 @@ public class Cell {
     public CellType getCellType() {
         return this.type;
     }
+
+    public boolean isVisitable(Bender bender) {
+
+        if (type != CellType.WALL && ((type == CellType.BLOCK && bender.isOnBeer()) || type != CellType.BLOCK)) {
+            return true;
+        } 
+        
+        return false;
+    }
 }
