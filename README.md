@@ -12,7 +12,7 @@ Les 9 règles du nouveau système Bender :
 
     Bender part de l’endroit indiqué par le caractère @ sur la carte et se dirige vers le SUD.
     Bender termine son parcours et meurt lorsqu’il rejoint la cabine à suicide notée $.
-    Les obstacles que Bender peut rencontrer sont représentés par X ou X.
+    Les obstacles que Bender peut rencontrer sont représentés par X ou #.
     Lorsque Bender rencontre un obstacle, il change de direction en utilisant les priorités suivantes : SUD, EST, NORD et OUEST. Il essaie donc d’abord d’aller au SUD, s’il ne peut pas il va à l’EST, s’il ne peut toujours pas il va au NORD, et finalement s'il ne peut toujours pas il va à l’OUEST.
     Sur son chemin, Bender peut rencontrer des modificateurs de trajectoire qui vont lui faire changer instantanément de direction. Le modificateur S l'orientera désormais vers le SUD, E vers l’EST, N vers le NORD et W vers l’OUEST.
     Les inverseurs de circuits (I sur la carte) produisent un champ magnétique qui vont inverser les priorités de direction que Bender devrait choisir à la rencontre d’un obstacle. Les priorités deviendront OUEST, NORD, EST, SUD. Si Bender retourne sur un inverseur I, les priorités repassent à leur état d’origine (SUD, EST, NORD, OUEST).
@@ -22,22 +22,22 @@ Les 9 règles du nouveau système Bender :
 
 Votre programme doit afficher la succession des mouvements de Bender en fonction de la carte fournie en entrée.
 
-La carte est découpée en lignes (L) et en colonnes (C). Les contours de la carte sont toujours des obstacles incassables X. La carte contient toujours un départ @ et une cabine à suicide $.
+La carte est découpée en lignes (L) et en colonnes (C). Les contours de la carte sont toujours des obstacles incassables #. La carte contient toujours un départ @ et une cabine à suicide $.
 
 Si Bender ne peut pas rejoindre la cabine à suicide car il tourne en boucle indéfiniment, votre programme devra uniquement afficher LOOP.
   Exemple
 
 Par exemple, pour la carte ci-dessous :
 
-XXXXXX
+######
 
-X@E.$X
+#@E.$#
 
-X.N..X
+#.N..#
 
-XX...X
+#X...#
 
-XXXXXX
+######
 
 Bender effectuera la suite de mouvements :
 
@@ -66,25 +66,25 @@ Entrée
 
 10 10
 
-XXXXXXXXXX
+##########
 
-X........X
+#........#
 
-X..S...W.X
+#..S...W.#
 
-X........X
+#........#
 
-X..$.....X
+#..$.....#
 
-X........X
+#........#
 
-X@.......X
+#@.......#
 
-X........X
+#........#
 
-XE.....N.X
+#E.....N.#
 
-XXXXXXXXXX
+##########
 
 Sortie
 
