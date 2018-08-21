@@ -1,20 +1,42 @@
 package bender;
 
+import bender.utils.BenderMap;
+import bender.utils.MapExample;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class BenderJavaKata {
 
     public static void main (String[] args) {
         displayMainMenu();
         String input = readUserInput();
-
-        if (!input.equals("0")) {
+        if (input.equals("0")) {
+            System.out.println("Cheers !");
             return;
         }
 
-        System.out.println("Cheers !");
+        getChosenMapAndDisplay(input);
+    }
+
+    private static void getChosenMapAndDisplay(String input) {
+
+        BenderMap map = new BenderMap();
+        MapExample mapExample = new MapExample();
+        try {
+            Method method = mapExample.getClass().getMethod("getBenderMap" + input);
+            map = (BenderMap) method.invoke(mapExample);
+        }
+        catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+
+        for (String line : map.getGrid()) {
+            System.out.println(line);
+        }
     }
 
     private static String readUserInput() {

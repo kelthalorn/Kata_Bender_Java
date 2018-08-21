@@ -12,6 +12,8 @@ public class BenderMap {
         this.grid = grid;
     }
 
+    public BenderMap () {}
+
     public int getWidth() {
         return width;
     }
@@ -22,9 +24,5 @@ public class BenderMap {
 
     public String[] getGrid() {
         return grid;
-    }
-
-    public String getRow(int index) {
-        return grid[index];
     }
 }
