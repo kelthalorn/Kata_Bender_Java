@@ -1,6 +1,5 @@
 package bender;
 
-import bender.utils.BenderMap;
 import bender.utils.MapExample;
 
 import java.io.BufferedReader;
@@ -19,24 +18,26 @@ public class BenderJavaKata {
             return;
         }
 
-        getChosenMapAndDisplay(input);
+        String[] currentMap = getChosenMapAndDisplay(input);
     }
 
-    private static void getChosenMapAndDisplay(String input) {
+    private static String[] getChosenMapAndDisplay(String input) {
 
-        BenderMap map = new BenderMap();
+        String[] map = {};
         MapExample mapExample = new MapExample();
         try {
-            Method method = mapExample.getClass().getMethod("getBenderMap" + input);
-            map = (BenderMap) method.invoke(mapExample);
+            Method method = mapExample.getClass().getMethod("getGrid" + input);
+            map = (String[]) method.invoke(mapExample);
         }
         catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             e.printStackTrace();
         }
 
-        for (String line : map.getGrid()) {
+        for (String line : map) {
             System.out.println(line);
         }
+
+        return map;
     }
 
     private static String readUserInput() {
