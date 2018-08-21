@@ -1,7 +1,5 @@
 package bender;
 
-import bender.BenderManager;
-
 public class BenderJavaKata {
     
     private static BenderManager benderManager;
