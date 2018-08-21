@@ -6,7 +6,8 @@ Bender est un robot dépressif qui se soigne par la fête et l’alcool. Pour lu
 Bender est maintenant livré à lui-même et erre dans les rues de Futurama avec l'intention d’en finir dans une cabine à suicide.
 
 Pour l'intercepter et le sauver d'une mort quasi-certaine, les autorités vous chargent d'une mission : écrire un programme qui permettra de prévoir le chemin parcouru par Bender. Pour cela, on vous fournit la logique de la nouvelle intelligence avec laquelle il a été programmé ainsi qu'une carte de la ville.
-  Règles
+  
+**Règles**
 
 Les 9 règles du nouveau système Bender :
 
@@ -47,12 +48,17 @@ Bender effectuera la suite de mouvements :
     EAST (changement de direction causé par le E)
     EAST (direction courante, fin au point $)
 
+**Pour bien commencer**
+
+Afin de facilité le démarrage du projet, l'ensemble des map nécessaires à la validation de votre programme est fourni dans la classe MapExemple et accessible via une classe BenderMap.
+Chaque map permet de vérifier chacune des règles énoncées ci-dessus et sont classées par difficulté croissante.
+
 **Entrées du jeu**
 
 **_Entrée_**
 
-    Ligne 1 : le nombre de lignes L et de colonnes C de la carte, séparés par un espace.
-    L lignes suivantes : une ligne de longueur C représentant une ligne de la carte. Une ligne peut contenir les caractères X, X, @, $, S, E, N, W, B, I, T et espace.
+    La map que vous voulez valider (par ex: 1)
+    
 **_Sortie_**
 
     Si Bender peut rejoindre $ affichez la succession des mouvements. Un mouvement par ligne : SOUTH pour le Sud, EAST pour l’Est, NORTH pour le Nord et WEST pour l’Ouest. 
