@@ -1,7 +1,5 @@
 package bender.utils;
 
-import java.lang.reflect.Method;
-
 public class MapExample {
 
     private static String[] gridSimpleMove = {

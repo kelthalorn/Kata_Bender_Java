@@ -1,25 +1,74 @@
 package bender;
 
-public class Bender {
+import bender.enums.Direction;
 
-    private int posX;
-    private int posY;
+public class Bender implements IBenderStatment {
 
-    public Bender () {}
+    private boolean movePossible;
 
-    public int getPosX() {
-        return posX;
+    public Bender () {
+        this.movePossible = true;
     }
 
-    public void setPosX(int posX) {
-        this.posX = posX;
+    public void setMovePossible() {
+        this.movePossible = true;
     }
 
-    public int getPosY() {
-        return posY;
+    private void setMoveImpossible() {
+        this.movePossible = false;
     }
 
-    public void setPosY(int posY) {
-        this.posY = posY;
+    public boolean isMovePossible() {
+        return this.movePossible;
+    }
+
+    @Override
+    public void haveReachedTheEnd() {
+
+    }
+
+    @Override
+    public Direction haveFoundSouthSymbol() {
+        return Direction.SOUTH;
+    }
+
+    @Override
+    public Direction haveFoundNorthSymbol() {
+        return Direction.NORTH;
+    }
+
+    @Override
+    public Direction haveFoundEastSymbol() {
+        return Direction.EAST;
+    }
+
+    @Override
+    public Direction haveFoundWestSymbol() {
+        return Direction.WEST;
+    }
+
+    @Override
+    public void haveFoundInverserSymbol() {
+
+    }
+
+    @Override
+    public void haveFoundTeleporterSymbol() {
+
+    }
+
+    @Override
+    public void haveFoundWallSymbol() {
+        setMoveImpossible();
+    }
+
+    @Override
+    public void haveFoundMapBorderSymbol() {
+        setMoveImpossible();
+    }
+
+    @Override
+    public void haveFoundBeerSymbol() {
+
     }
 }

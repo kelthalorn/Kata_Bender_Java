@@ -9,12 +9,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BenderJavaKata {
 
-    private static Bender bender;
-    private static String[] output;
-    private static BenderMap benderMap;
+    private static int currentPositionX = 0;
+    private static int currentPositionY = 0;
+
 
     public static void main (String[] args) {
         displayMainMenu();
@@ -25,9 +27,31 @@ public class BenderJavaKata {
         }
         String[] currentMap = getChosenMapAndDisplay(input);
 
-        bender = new Bender();
-        output = new String[] {"SOUTH"};
-        benderMap = initCellGrid(currentMap);
+        GridManager gridManager = new GridManager();
+        BenderMap benderMap = initCellGrid(currentMap);
+        List<String> output = new ArrayList<>();
+
+        while(!gridManager.isMovesFinished()) {
+            String nextDirection = gridManager.manageNextMove(currentPositionX, currentPositionY, benderMap);
+            if (nextDirection.equals("FAILED")) {
+                System.out.println("FAILED ! ! ! ! !");
+                break;
+            }
+
+            output.add(nextDirection);
+            if (gridManager.isInLoop()) {
+                    output.clear();
+                    output.add(Constants.LOOP);
+                    gridManager.setMovesFinished();
+            } else {
+                currentPositionX = gridManager.getNextPosX();
+                currentPositionY = gridManager.getNextPosY();
+            }
+        }
+
+        for (String direction : output) {
+            System.out.println(direction);
+        }
     }
 
     private static BenderMap initCellGrid(String[] currentMap) {
@@ -41,8 +65,8 @@ public class BenderJavaKata {
                 cellMap[indexRow][indexColumn] = symbol;
 
                 if(symbol.equals(Constants.START_SYMBOL)) {
-                    bender.setPosX(indexColumn);
-                    bender.setPosY(indexRow);
+                    currentPositionX = indexColumn;
+                    currentPositionY = indexRow;
                 }
             }
         }
