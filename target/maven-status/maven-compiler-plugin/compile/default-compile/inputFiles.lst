@@ -1,8 +1,8 @@
-/home/thco/Projects/Katas/java/Bender/src/main/java/bender/BenderManager.java
-/home/thco/Projects/Katas/java/Bender/src/main/java/bender/Direction.java
-/home/thco/Projects/Katas/java/Bender/src/main/java/bender/BenderMap.java
-/home/thco/Projects/Katas/java/Bender/src/main/java/bender/Bender.java
-/home/thco/Projects/Katas/java/Bender/src/main/java/bender/BenderJavaKata.java
-/home/thco/Projects/Katas/java/Bender/src/main/java/bender/Cell.java
-/home/thco/Projects/Katas/java/Bender/src/main/java/bender/Constants.java
-/home/thco/Projects/Katas/java/Bender/src/main/java/bender/CellType.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/com/katas/bender/GridManager.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/com/katas/bender/utils/Constants.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/com/katas/bender/utils/BenderMap.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/com/katas/bender/IBenderStatment.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/com/katas/bender/BenderJavaKata.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/com/katas/bender/enums/Direction.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/com/katas/bender/Bender.java
+/home/thco/Projects/Katas/java/Bender/src/main/java/com/katas/bender/utils/MapExample.java
